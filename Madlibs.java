@@ -17,7 +17,9 @@ public class Madlibs {
         int inputFour;
         inputFour = madlib.indexOf(">", inputTwo + 1);
         int inputFive;
-        inputFive = madlib.indexOf(inputThree + 1);
+        inputFive = madlib.indexOf("<", inputThree + 1);
+        int inputSix;
+        inputSix = madlib.indexOf(">", inputFour + 1);
         System.out.println("Give me a " + madlib.substring(input + 1, inputTwo));
         String userInput = sc.nextLine(); 
 
