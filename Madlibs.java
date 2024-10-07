@@ -1,27 +1,31 @@
 import java.util.Scanner;
 
-public class Madlibs {
-    public static void main(String[] args)
-    {
+public class Main {
+    public static void main(String[] args) {
+    
         Scanner sc = new Scanner(System.in);
         String madlib = "I went to the animal <noun>, the <plural_noun> and the <number> beasts were there.";
         //madlib = "Once upon a time in a <adjective> land, a <noun> <adverb> grew.";
         //madlib = "I went to a <place> and saw <number> <plural_noun> there.";
 
-        int input;
-        input = madlib.indexOf("<");
-        int inputTwo;
-        inputTwo = madlib.indexOf(">");
-        int inputThree;
-        inputThree = madlib.indexOf("<", input + 1);
-        int inputFour;
-        inputFour = madlib.indexOf(">", inputTwo + 1);
-        int inputFive;
-        inputFive = madlib.indexOf("<", inputThree + 1);
-        int inputSix;
-        inputSix = madlib.indexOf(">", inputFour + 1);
-        System.out.println("Give me a " + madlib.substring(input + 1, inputTwo));
+        int openBracketIndex;
+        int closeBracketIndex;
+        String wordType;
+
+        openBracketIndex = madlib.indexOf("<");
+        closeBracketIndex = madlib.indexOf(">");
+        wordType = madlib.substring(openBracketIndex, closeBracketIndex + 1);
+        System.out.print("Give me a " + wordType); 
         String userInput = sc.nextLine(); 
+
+
+        String firstPart = madlib.substring(0, openBracketIndex);
+        String lastPart = madlib.substring(closeBracketIndex + 1);
+        madlib = firstPart + userInput + lastPart;
+
+        
+
+       
 
 
 
